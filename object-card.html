@@ -86,28 +86,31 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 .pt-lightbox__count{ position:absolute; bottom:24px; left:50%; transform:translateX(-50%); color:#fff;
   font-size:13px; background:rgba(255,255,255,.14); padding:4px 12px; border-radius:20px; }
 
-.pt-card__actions{ display:flex; flex-direction:column; gap:14px; padding:16px; background:#f7f8fa; border-radius:15px; }
+.pt-card__actions{ display:flex; flex-direction:column; gap:10px; padding:14px 16px; background:#f7f8fa; border-radius:15px; }
 .pt-card__actions .btn{ width:100%; }
-/* Группа компаний + юрлицо-застройщик — без подписей, просто два значения друг под другом */
+/* КВ — зелёная плашка, группа компаний + юрлицо — в одну строку через разделитель, «Условия
+   сотрудничества» — компактная ссылка с иконкой; вид взят из референса «Карточка ЖК — компактная версия». */
+.pt-kv{ display:inline-flex; align-self:flex-start; font-size:12px; font-weight:700; color:#1c7c3f;
+  background:#e6f3ea; border-radius:6px; padding:4px 9px; }
 .pt-org{ font-size:15px; color:var(--pt-ink); font-weight:600; }
 .pt-org span{ display:block; font-size:13px; color:var(--pt-muted); font-weight:400; margin-top:2px; }
-
-.pt-kv{ font-size:13px; color:var(--pt-muted); }
-.pt-kv b{ color:var(--pt-ink); font-weight:700; }
-.pt-cond{ display:inline-flex; align-items:center; gap:8px; border:0; background:transparent; cursor:pointer;
-  color:var(--pt-ink); font-weight:600; font-size:14px; padding:0; }
-.pt-cond i{ color:var(--pt-accent); font-size:18px; }
+.pt-cond{ display:inline-flex; align-items:center; gap:6px; align-self:flex-start; border:0; background:transparent; cursor:pointer;
+  color:#4a4f59; font-weight:600; font-size:13px; padding:0; }
+.pt-cond i{ color:var(--pt-accent); font-size:15px; }
 
 .pt-card__body h3{ font-size:24px; font-weight:700; margin:0; }
 .pt-tags{ font-size:13.5px; color:#4a4f59; }
 .pt-tags b{ color:var(--pt-ink); font-weight:600; }
 .pt-addr{ font-size:13.5px; color:#4a4f59; }
-.pt-locchips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
-.pt-locchip{ font-size:12px; font-weight:600; color:#4a4f59; background:#f1f2f5; border-radius:7px; padding:3px 9px; }
+.pt-locchips{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:6px; }
+/* в карточке строки идут с gap:12px — округ/район прижимаем к адресу, чтобы читались одним блоком */
+.pt-card__body .pt-locchips{ margin-top:-8px; }
+/* округ и район — простым текстом, без плашки */
+.pt-locchip{ font-size:12px; font-weight:600; color:#4a4f59; }
 
 .pt-adv{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin:6px 0; }
 .pt-adv__item{ display:flex; align-items:center; gap:10px; }
-.pt-adv__ic{ width:44px; height:44px; flex-shrink:0; background:var(--pt-accent-2); border-radius:12px;
+.pt-adv__ic{ width:22px; height:22px; flex-shrink:0; background:var(--pt-accent-2); border-radius:12px;
   display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,.15); }
 .pt-adv__ic img{ width:78%; height:78%; object-fit:contain; }
 .pt-adv__txt{ font-size:14px; font-weight:600; line-height:1.2; }
@@ -140,6 +143,11 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
   .pt-card{ flex-direction:column; }
   .pt-card__media{ width:100%; flex-basis:auto; }
 }
+
+/* --- Подробное описание спецпредложения — перед картой, только у ЖК с активной акцией --- */
+.pt-offer-block{ margin-top:20px; background:#fff4e8; border:1px solid #fbd9ad; border-radius:18px; padding:24px; }
+.pt-offer-block__title{ font-size:20px; font-weight:700; margin:0 0 12px; color:#7a4a00; }
+.pt-offer-block__text{ font-size:14px; line-height:1.6; color:#5c3a00; }
 
 /* --- Карта расположения ЖК, внизу карточки объекта (только эта страница, в ТЗ не выносится) --- */
 .pt-obj-map{ margin-top:20px; background:#fff; border-radius:18px; padding:24px;
@@ -224,19 +232,19 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
           </div>
           <div class="pt-card__actions">
             <button class="btn btn__primary" type="button" data-popup="#leave_request-popup">Оставить заявку</button>
-            <div class="pt-kv">КВ: <b>2,5%</b></div>
+            <div class="pt-kv">КВ 2,5%</div>
             <div class="pt-org">Dominanta<span>ООО «СЗ «Лазурит»</span></div>
             <button class="pt-cond" type="button" data-popup="#conditions-popup"><i class="svg_icon-conditions"></i><span>Условия сотрудничества</span></button>
           </div>
         </div>
         <div class="pt-card__body">
           <h3>ЖК «Свет»</h3>
+          <div class="pt-addr">г. Москва, Дмитровское шоссе</div>
+          <div class="pt-locchips"><span class="pt-locchip">САО</span><span class="pt-locchip">р-н Западное Дегунино</span></div>
           <div class="pt-tags">
             <b>Дом:</b> Кирпич-монолит &nbsp;·&nbsp; <b>Комнаты:</b> Студия, 1, 2, 3, 4+ &nbsp;·&nbsp;
             <b>Отделка:</b> Черновая &nbsp;·&nbsp; <b>Срок сдачи:</b> 2028 3 кв.
           </div>
-          <div class="pt-addr">г. Москва, Дмитровское шоссе, вл. 83А</div>
-            <div class="pt-locchips"><span class="pt-locchip">САО</span><span class="pt-locchip">р-н Западное Дегунино</span></div>
           <div class="pt-adv">
             <div class="pt-adv__item">
               <div class="pt-adv__ic"><img src="./assets/jnozmipddnkqupnlhk8fgsea35c2x9pk.png" alt="Метро"></div>
@@ -297,19 +305,19 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
           </div>
           <div class="pt-card__actions">
             <button class="btn btn__primary" type="button" data-popup="#leave_request-popup">Оставить заявку</button>
-            <div class="pt-kv">КВ: <b>2,5%</b></div>
+            <div class="pt-kv">КВ 2,5%</div>
             <div class="pt-org">Dominanta<span>АО «СЗ «ХайдАут»</span></div>
             <button class="pt-cond" type="button" data-popup="#conditions-popup"><i class="svg_icon-conditions"></i><span>Условия сотрудничества</span></button>
           </div>
         </div>
         <div class="pt-card__body">
           <h3>ЖК «HideOUT»</h3>
+          <div class="pt-addr">г. Москва, 4-й Сетуньский проезд</div>
+          <div class="pt-locchips"><span class="pt-locchip">ЗАО</span><span class="pt-locchip">р-н Раменки</span></div>
           <div class="pt-tags">
             <b>Дом:</b> Кирпич-монолит &nbsp;·&nbsp; <b>Комнаты:</b> 1, 2, 3, 4+ &nbsp;·&nbsp;
             <b>Отделка:</b> Черновая &nbsp;·&nbsp; <b>Срок сдачи:</b> 2028 4 кв.
           </div>
-          <div class="pt-addr">г. Москва, 4-й Сетуньский проезд, 10Ас2</div>
-            <div class="pt-locchips"><span class="pt-locchip">ЗАО</span><span class="pt-locchip">р-н Раменки</span></div>
           <div class="pt-adv">
             <div class="pt-adv__item">
               <div class="pt-adv__ic"><img src="./assets/jnozmipddnkqupnlhk8fgsea35c2x9pk.png" alt="Метро"></div>
@@ -344,6 +352,18 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
           </div>
         </div>
       </article>
+
+      <!-- показывается только у ЖК с активным спецпредложением — источник текста —
+           поле «Спецпредложение, подробно» в админке ЖК (см. ТЗ 5) -->
+      <div class="pt-offer-block">
+        <h3 class="pt-offer-block__title">Спецпредложение</h3>
+        <div class="pt-offer-block__text">
+          До 15 декабря 2026 года при 100% оплате — скидка 3% от стоимости квартиры, а при оформлении
+          ипотеки — ставка от 0,1% на первые 3 года по программе субсидирования от застройщика. Условия
+          распространяются на квартиры студийного и 1-комнатного типа, точный расчёт по конкретному
+          лоту — у менеджера по заявке.
+        </div>
+      </div>
 
       <div class="pt-obj-map">
         <h3 class="pt-obj-map__title">Расположение на карте</h3>

@@ -44,7 +44,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
 /* --- Поиск по названию ЖК с подсказками --- */
 .pt-search{ position:relative; }
-.pt-search__field{ display:flex; align-items:center; gap:12px; height:60px; padding:0 20px;
+.pt-search__field{ display:flex; align-items:center; gap:12px; height:56px; padding:0 18px;
   background:#fff; border:1.5px solid var(--pt-line); border-radius:15px; transition:border-color .2s; }
 .pt-search__field:focus-within{ border-color:var(--pt-accent); }
 .pt-search__field i{ font-size:20px; color:var(--pt-muted); flex-shrink:0; }
@@ -67,7 +67,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
 /* --- Мультиселект (Застройщики, Регионы, Срок сдачи/выдачи ключей, Комнаты, Отделка, Стены) --- */
 .pt-ms{ position:relative; }
-.pt-ms__trigger{ width:100%; height:60px; padding:0 18px; display:flex; align-items:center; justify-content:space-between;
+.pt-ms__trigger{ width:100%; height:56px; padding:0 16px; display:flex; align-items:center; justify-content:space-between;
   gap:10px; background:#fff; border:1.5px solid var(--pt-line); border-radius:15px; cursor:pointer;
   font-size:15px; color:var(--pt-ink); text-align:left; font-family:inherit; }
 .pt-ms__trigger:hover{ border-color:#c7cbd3; }
@@ -86,6 +86,19 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 .pt-ms__footer{ display:flex; justify-content:flex-end; padding:6px 6px 2px; margin-top:4px; border-top:1px solid var(--pt-line); }
 .pt-ms__reset{ border:0; background:transparent; color:var(--pt-accent); font-size:13px; font-weight:600; cursor:pointer; padding:6px 4px; }
 
+/* Поля «от/до» (Стоимость, Площадь) используют класс .input из бандла сайта — там он залит
+   светло-серым (#f3f2f7) без видимой границы, что смотрится тяжелее/грубее, чем остальные поля
+   строки (поиск, селекты) с белым фоном и тонкой рамкой. Приводим к тому же виду, что у соседей. */
+#filter .input{ background:#fff; border:1.5px solid var(--pt-line); border-radius:15px;
+  height:56px; min-height:56px; padding:0 18px; font-size:15px; font-weight:400; }
+#filter .input:focus{ border-color:var(--pt-accent); outline:0; }
+
+/* Класса gap-[24px] нет в собранном CSS сайта (он там просто никогда не использовался) — сам
+   Tailwind-класс в разметке есть, но без эффекта: строка поиска, ряд полей и ряд «Все фильтры»
+   сидели вплотную друг к другу и друг к другу по горизонтали (0px вместо нужных 24px). Даём
+   этому классу реальный стиль вместо точечных правок под каждый элемент. */
+.gap-\[24px\]{ gap:24px; }
+
 /* Строка полей (Регионы / Количество комнат / Стоимость / Площадь) и раскрывающийся блок «Все фильтры»
    (Срок сдачи / Группа компаний / Отделка / Стены) — держим 4 колонки в одну строку на обычных
    ПК-ширинах: у сайта собственные брейкпоинты max-lg/max-md срабатывают только на ширинах
@@ -97,6 +110,30 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 }
 @media (max-width:600px){
   #filter_company,#filter_advanced{ grid-template-columns:repeat(1,minmax(0,1fr)); }
+}
+
+/* На телефоне по умолчанию видны только поиск и «Все фильтры» — сетка полей (#filter_company),
+   «Спецпредложения», «Сбросить фильтры» и «Найти» скрыты и появляются вместе с #filter_advanced
+   при раскрытии «Все фильтры» (тем же чекбоксом). */
+@media (max-width:600px){
+  #filter_company{ display:none; }
+  /* Первая пара (Спецпредложения + Сбросить фильтры) скрывается ЦЕЛИКОМ как группа — если прятать
+     только детей, пустая группа всё равно остаётся flex-элементом и «съедает» gap:24px внутри
+     .pt-filter-actions, из-за чего между поиском и «Все фильтры» оставался лишний зазор. */
+  .pt-filter-actions__group:has(.pt-switch){ display:none; }
+  #ptFindBtn{ display:none; }
+  .pt-filter-btn--toggle{ width:100%; }
+  #filter:has(input.filters-toggle:checked) #filter_company{ display:grid; }
+  #filter:has(input.filters-toggle:checked) .pt-filter-actions__group:has(.pt-switch){ display:flex; }
+  #filter:has(input.filters-toggle:checked) #ptFindBtn{ display:flex; }
+
+  /* Значок трёх вертикальных полосок у «Все фильтры» — только на телефоне, на ПК кнопка
+     осталась без левого значка (см. текст + стрелка справа). */
+  #filter .pt-filter-btn--toggle .svg_icon-menu{ display:inline-block; }
+
+  /* В свёрнутом виде тянем строку с кнопкой ближе к поиску; в раскрытом — обычный отступ. */
+  .pt-filter-actions{ margin-top:-16px; }
+  #filter:has(input.filters-toggle:checked) .pt-filter-actions{ margin-top:0; }
 }
 
 /* Спецпредложения+Сбросить фильтры — левая пара, Все фильтры+Найти — правая пара; пары разведены
@@ -120,6 +157,9 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
    общее правило выше (calc(50% - 10px) на прямых детях .pt-filter-actions__group), а не эти классы. */
 .pt-filter-btn--toggle{ width:230px; }
 .pt-filter-btn--find{ width:180px; }
+/* На ПК у «Все фильтры» только текст + стрелка справа; значок трёх полосок включается на телефоне
+   отдельным правилом ниже (см. @media max-width:600px). */
+.pt-filter-btn--toggle .svg_icon-menu{ display:none; }
 
 /* Стрелка у «Все фильтры»: вниз — свёрнуто, вверх — раскрыто. Готового класса rotate-180
    для этого варианта нет в собранном bundle (там только rotate-[-270deg] от прежней разметки),
@@ -240,28 +280,31 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 .pt-slider__count{ position:absolute; right:12px; bottom:12px; background:rgba(0,0,0,.55); color:#fff;
   font-size:12px; border-radius:20px; padding:3px 10px; }
 
-.pt-card__actions{ display:flex; flex-direction:column; gap:14px; padding:16px; background:#f7f8fa; border-radius:15px; }
+.pt-card__actions{ display:flex; flex-direction:column; gap:10px; padding:14px 16px; background:#f7f8fa; border-radius:15px; }
 .pt-card__actions .btn{ width:100%; }
-/* Группа компаний + юрлицо-застройщик — без подписей, просто два значения друг под другом */
+/* КВ — зелёная плашка, группа компаний + юрлицо — в одну строку через разделитель, «Условия
+   сотрудничества» — компактная ссылка с иконкой; вид взят из референса «Карточка ЖК — компактная версия». */
+.pt-kv{ display:inline-flex; align-self:flex-start; font-size:12px; font-weight:700; color:#1c7c3f;
+  background:#e6f3ea; border-radius:6px; padding:4px 9px; }
 .pt-org{ font-size:15px; color:var(--pt-ink); font-weight:600; }
 .pt-org span{ display:block; font-size:13px; color:var(--pt-muted); font-weight:400; margin-top:2px; }
-
-.pt-kv{ font-size:13px; color:var(--pt-muted); }
-.pt-kv b{ color:var(--pt-ink); font-weight:700; }
-.pt-cond{ display:inline-flex; align-items:center; gap:8px; border:0; background:transparent; cursor:pointer;
-  color:var(--pt-ink); font-weight:600; font-size:14px; padding:0; }
-.pt-cond i{ color:var(--pt-accent); font-size:18px; }
+.pt-cond{ display:inline-flex; align-items:center; gap:6px; align-self:flex-start; border:0; background:transparent; cursor:pointer;
+  color:#4a4f59; font-weight:600; font-size:13px; padding:0; }
+.pt-cond i{ color:var(--pt-accent); font-size:15px; }
 
 .pt-card__body h3{ font-size:24px; font-weight:700; margin:0; }
 .pt-tags{ font-size:13.5px; color:#4a4f59; }
 .pt-tags b{ color:var(--pt-ink); font-weight:600; }
 .pt-addr{ font-size:13.5px; color:#4a4f59; }
-.pt-locchips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
-.pt-locchip{ font-size:12px; font-weight:600; color:#4a4f59; background:#f1f2f5; border-radius:7px; padding:3px 9px; }
+.pt-locchips{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:6px; }
+/* в карточке строки идут с gap:12px — округ/район прижимаем к адресу, чтобы читались одним блоком */
+.pt-card__body .pt-locchips{ margin-top:-8px; }
+/* округ и район — простым текстом, без плашки */
+.pt-locchip{ font-size:12px; font-weight:600; color:#4a4f59; }
 
 .pt-adv{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin:6px 0; }
 .pt-adv__item{ display:flex; align-items:center; gap:10px; }
-.pt-adv__ic{ width:44px; height:44px; flex-shrink:0; background:var(--pt-accent-2); border-radius:12px;
+.pt-adv__ic{ width:22px; height:22px; flex-shrink:0; background:var(--pt-accent-2); border-radius:12px;
   display:flex; align-items:center; justify-content:center; box-shadow:0 2px 6px rgba(0,0,0,.15); }
 .pt-adv__ic img{ width:78%; height:78%; object-fit:contain; }
 .pt-adv__txt{ font-size:14px; font-weight:600; line-height:1.2; }
@@ -271,6 +314,11 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 .pt-plans__row{ display:flex; flex-direction:column; }
 .pt-plans__row .s{ font-size:13px; color:var(--pt-muted); font-weight:600; }
 .pt-plans__row .p{ font-size:19px; font-weight:600; }
+
+/* --- Короткое описание спецпредложения — внизу карточки в списке, только у ЖК с активной акцией --- */
+.pt-offer-note{ margin-top:8px; padding:10px 14px; background:#fff4e8; border:1px solid #fbd9ad;
+  border-radius:12px; font-size:13px; line-height:1.4; color:#7a4a00; }
+.pt-offer-note b{ font-weight:700; color:#b35900; }
 
 /* --- модалка-заглушка --- */
 .pt-modal{ position:fixed; inset:0; background:rgba(15,18,22,.55); display:none; align-items:center;
@@ -649,8 +697,8 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
                 <button type="button" class="pt-ms__trigger"><span class="pt-ms__value">Любая</span><i class="pt-ms__chevron svg_icon-chevron"></i></button>
                 <div class="pt-ms__panel">
                   <label class="pt-ms__opt"><input type="checkbox" name="FINISHING[]" value="28"><span>Черновая отделка</span></label>
+                  <label class="pt-ms__opt"><input type="checkbox" name="FINISHING[]" value="29"><span>Предчистовая отделка</span></label>
                   <label class="pt-ms__opt"><input type="checkbox" name="FINISHING[]" value="27"><span>Чистовая отделка</span></label>
-                  <label class="pt-ms__opt"><input type="checkbox" name="FINISHING[]" value="235"><span>WhiteBox</span></label>
                   <div class="pt-ms__footer"><button type="button" class="pt-ms__reset">Сбросить</button></div>
                 </div>
               </div>
@@ -688,6 +736,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
             <label class="cursor-pointer pt-filter-btn--toggle">
               <input type="checkbox" class="filters-toggle hidden">
               <span class="inline-flex h-[60px] w-full items-center justify-center gap-[15px] rounded-[15px] bg-base px-[25px] text-lg font-bold text-primary group-has-[input.filters-toggle:checked]/filter:bg-lines max-md:h-10 max-md:text-sm">
+                <i class="svg_icon-menu"></i>
                 <span class="text-nowrap">Все фильтры</span>
                 <i class="svg_icon-chevron text-xs"></i>
               </span>
@@ -752,7 +801,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
           </div>
           <div class="bd">
             <h4 id="ptMapPopupName">ЖК «Свет»</h4>
-            <div class="addr" id="ptMapPopupAddr">г. Москва, Дмитровское шоссе, вл. 83А</div>
+            <div class="addr" id="ptMapPopupAddr">г. Москва, Дмитровское шоссе</div>
             <div class="pt-locchips" id="ptMapPopupChips"><span class="pt-locchip">САО</span><span class="pt-locchip">р-н Западное Дегунино</span></div>
             <div class="rooms" id="ptMapPopupRooms"></div>
             <div class="price" id="ptMapPopupPrice">от 16,2 млн ₽</div>
@@ -782,7 +831,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
             <!-- ПЕРЕНЕСЕНО ПОД КАРТИНКИ: заявка, застройщик, условия -->
             <div class="pt-card__actions">
               <button class="btn btn__primary" type="button" data-popup="#leave_request-popup">Оставить заявку</button>
-              <div class="pt-kv">КВ: <b>2,5%</b></div>
+              <div class="pt-kv">КВ 2,5%</div>
               <div class="pt-org">Dominanta<span>ООО «СЗ «Лазурит»</span></div>
               <button class="pt-cond" type="button" data-popup="#conditions-popup"><i class="svg_icon-conditions"></i><span>Условия сотрудничества</span></button>
             </div>
@@ -790,11 +839,11 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
           <div class="pt-card__body">
             <h3>ЖК «Свет»</h3>
+            <div class="pt-addr">г. Москва, Дмитровское шоссе</div>
+            <div class="pt-locchips"><span class="pt-locchip">САО</span><span class="pt-locchip">р-н Западное Дегунино</span></div>
             <div class="pt-tags">
               <b>Отделка:</b> Черновая &nbsp;·&nbsp; <b>Срок сдачи:</b> 2028 3 кв.
             </div>
-            <div class="pt-addr">г. Москва, Дмитровское шоссе, вл. 83А</div>
-            <div class="pt-locchips"><span class="pt-locchip">САО</span><span class="pt-locchip">р-н Западное Дегунино</span></div>
 
             <div class="pt-adv">
               <div class="pt-adv__item">
@@ -832,7 +881,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
             <div class="pt-card__actions">
               <button class="btn btn__primary" type="button" data-popup="#leave_request-popup">Оставить заявку</button>
-              <div class="pt-kv">КВ: <b>2,5%</b></div>
+              <div class="pt-kv">КВ 2,5%</div>
               <div class="pt-org">Dominanta<span>АО «СЗ «ХайдАут»</span></div>
               <button class="pt-cond" type="button" data-popup="#conditions-popup"><i class="svg_icon-conditions"></i><span>Условия сотрудничества</span></button>
             </div>
@@ -840,11 +889,11 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
           <div class="pt-card__body">
             <h3>ЖК «HideOUT»</h3>
+            <div class="pt-addr">г. Москва, 4-й Сетуньский проезд</div>
+            <div class="pt-locchips"><span class="pt-locchip">ЗАО</span><span class="pt-locchip">р-н Раменки</span></div>
             <div class="pt-tags">
               <b>Отделка:</b> Черновая &nbsp;·&nbsp; <b>Срок сдачи:</b> 2028 4 кв.
             </div>
-            <div class="pt-addr">г. Москва, 4-й Сетуньский проезд, 10Ас2</div>
-            <div class="pt-locchips"><span class="pt-locchip">ЗАО</span><span class="pt-locchip">р-н Раменки</span></div>
 
             <div class="pt-adv">
               <div class="pt-adv__item">
@@ -867,6 +916,10 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
               <div class="pt-plans__row"><span class="s">3-комн · 77–184 м²</span><span class="p">58,8 – 181,8 млн ₽</span></div>
               <div class="pt-plans__row"><span class="s">4-комн · 139–153 м²</span><span class="p">97,6 – 101,7 млн ₽</span></div>
             </div>
+
+            <!-- показывается только у ЖК с активным спецпредложением — источник текста —
+                 поле «Спецпредложение, коротко» в админке ЖК (см. ТЗ 5) -->
+            <div class="pt-offer-note"><b>Спецпредложение:</b> ипотека от 0,1% и скидка 3% при 100% оплате — успейте до 15.12.2026</div>
           </div>
         </article>
 
@@ -892,10 +945,10 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
 
   /* ---------- 1. Данные ЖК (в проде — из API каталога) ---------- */
   var COMPLEXES = [
-    { id:"c1", name:"ЖК «Свет»",     dev:"ООО «СЗ «Лазурит»",  developer:"Dominanta", addr:"г. Москва, Дмитровское шоссе, вл. 83А", city:"Москва", ao:"САО", district:"р-н Западное Дегунино", rooms:["Студии","1-комн.","2-комн.","3-комн.","4+ комн."], price:"от 16,2 млн ₽", dateAdded:"2026-09-10" },
-    { id:"c2", name:"ЖК «HideOUT»",  dev:"АО «СЗ «ХайдАут»",   developer:"Dominanta", addr:"г. Москва, 4-й Сетуньский проезд, 10Ас2", city:"Москва", ao:"ЗАО", district:"р-н Раменки", rooms:["1-комн.","2-комн.","3-комн.","4+ комн."], price:"от 33,8 млн ₽", offer:true },
-    { id:"x3", name:"ЖК «Hide»",     dev:"АО «СЗ «ХайдАут»",   developer:"Dominanta", addr:"г. Москва, 4-й Сетуньский проезд, 10", city:"Москва", ao:"ЗАО", district:"р-н Раменки", rooms:["1-комн.","2-комн."], price:"от 21,0 млн ₽" },
-    { id:"x4", name:"ЖК «iLove»",    dev:"ООО «СЗ «Столица Севера»", developer:"Кортрос", addr:"г. Москва, ул. Бочкова, 11А", city:"Москва", ao:"СВАО", district:"р-н Останкинский", rooms:["Студии","1-комн.","2-комн."], price:"от 12,4 млн ₽" },
+    { id:"c1", name:"ЖК «Свет»",     dev:"ООО «СЗ «Лазурит»",  developer:"Dominanta", addr:"г. Москва, Дмитровское шоссе", city:"Москва", ao:"САО", district:"р-н Западное Дегунино", rooms:["Студии","1-комн.","2-комн.","3-комн.","4+ комн."], price:"от 16,2 млн ₽", dateAdded:"2026-09-10" },
+    { id:"c2", name:"ЖК «HideOUT»",  dev:"АО «СЗ «ХайдАут»",   developer:"Dominanta", addr:"г. Москва, 4-й Сетуньский проезд", city:"Москва", ao:"ЗАО", district:"р-н Раменки", rooms:["1-комн.","2-комн.","3-комн.","4+ комн."], price:"от 33,8 млн ₽", offer:true },
+    { id:"x3", name:"ЖК «Hide»",     dev:"АО «СЗ «ХайдАут»",   developer:"Dominanta", addr:"г. Москва, 4-й Сетуньский проезд", city:"Москва", ao:"ЗАО", district:"р-н Раменки", rooms:["1-комн.","2-комн."], price:"от 21,0 млн ₽" },
+    { id:"x4", name:"ЖК «iLove»",    dev:"ООО «СЗ «Столица Севера»", developer:"Кортрос", addr:"г. Москва, ул. Бочкова", city:"Москва", ao:"СВАО", district:"р-н Останкинский", rooms:["Студии","1-комн.","2-комн."], price:"от 12,4 млн ₽" },
     { id:"x5", name:"ЖК «Большое Путилково»", dev:"ООО «СЗ «Самолет-Путилково»", developer:"Кортрос", addr:"МО, Красногорск, д. Путилково", city:"Красногорск", rooms:["Студии","1-комн.","2-комн.","3-комн."], price:"от 7,9 млн ₽" },
     { id:"x6", name:"ЖК «Пятницкие Луга»", dev:"ООО «СЗ «Самолет-Юрлово»", developer:"Dominanta", addr:"МО, Химки, д. Юрлово", city:"Химки", rooms:["Студии","1-комн.","2-комн."], price:"от 8,3 млн ₽" }
   ];
@@ -1049,7 +1102,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
     box.innerHTML = matches.map(function(c,i){
       return '<div class="pt-suggest__item'+(i===activeIdx?' is-active':'')+'" data-id="'+c.id+'">'+
                '<span class="pt-suggest__name">'+highlight(c.name, q)+'</span>'+
-               '<span class="pt-suggest__meta">'+highlight(c.developer, q)+'<br>'+highlight(locationLabel(c), q)+' · '+c.price+'</span>'+
+               '<span class="pt-suggest__meta">'+highlight(locationLabel(c), q)+' · '+c.price+'<br>'+highlight(c.developer, q)+'</span>'+
              '</div>';
     }).join("");
     box.classList.add("is-open");
@@ -1241,7 +1294,7 @@ body{ background:#f4f5f7; font-family:"Montserrat",-apple-system,"Segoe UI",Robo
       var c = COMPLEXES.find(function(x){ return x.id === pin.dataset.card; });
       document.getElementById("ptMapPopupName").textContent  = c.name;
       document.getElementById("ptMapPopupAddr").textContent  = c.addr;
-      document.getElementById("ptMapPopupChips").innerHTML   = [c.ao, c.district].filter(Boolean).map(function(t){ return '<span class="pt-locchip">'+t+'</span>'; }).join("");
+      document.getElementById("ptMapPopupChips").innerHTML   = (c.ao ? '<span class="pt-locchip">'+c.ao+'</span>' : '') + (c.district ? '<span class="pt-locchip">'+c.district+'</span>' : '');
       document.getElementById("ptMapPopupRooms").innerHTML   = (c.rooms || []).map(function(r){ return "<span>"+r+"</span>"; }).join("");
       document.getElementById("ptMapPopupBadges").innerHTML  = renderBadges(buildBadges(c));
       document.getElementById("ptMapPopupPrice").textContent  = c.price;
