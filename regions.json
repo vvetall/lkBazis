@@ -1,0 +1,1274 @@
+{
+  "source": "Таблица Регионы.xlsx (правки от 01.10.2026). Исходно — прототип filter.html и сайт trandagent.",
+  "format": "Каждый узел: name + children (регион или группа) либо name + code (конечный пункт). В фильтр передаётся только code конечных пунктов.",
+  "regions": [
+    {
+      "name": "Москва",
+      "children": [
+        {
+          "name": "ЦАО",
+          "children": [
+            {
+              "name": "Арбат",
+              "code": "moscow:cao:arbat"
+            },
+            {
+              "name": "Басманный",
+              "code": "moscow:cao:basmannyy"
+            },
+            {
+              "name": "Замоскворечье",
+              "code": "moscow:cao:zamoskvoreche"
+            },
+            {
+              "name": "Красносельский",
+              "code": "moscow:cao:krasnoselskiy"
+            },
+            {
+              "name": "Мещанский",
+              "code": "moscow:cao:meschanskiy"
+            },
+            {
+              "name": "Пресненский",
+              "code": "moscow:cao:presnenskiy"
+            },
+            {
+              "name": "Таганский",
+              "code": "moscow:cao:taganskiy"
+            },
+            {
+              "name": "Тверской",
+              "code": "moscow:cao:tverskoy"
+            },
+            {
+              "name": "Хамовники",
+              "code": "moscow:cao:hamovniki"
+            },
+            {
+              "name": "Якиманка",
+              "code": "moscow:cao:yakimanka"
+            }
+          ]
+        },
+        {
+          "name": "САО",
+          "children": [
+            {
+              "name": "Аэропорт",
+              "code": "moscow:sao:aeroport"
+            },
+            {
+              "name": "Беговой",
+              "code": "moscow:sao:begovoy"
+            },
+            {
+              "name": "Войковский",
+              "code": "moscow:sao:voykovskiy"
+            },
+            {
+              "name": "Восточное Дегунино",
+              "code": "moscow:sao:vostochnoe-degunino"
+            },
+            {
+              "name": "Головинский",
+              "code": "moscow:sao:golovinskiy"
+            },
+            {
+              "name": "Западное Дегунино",
+              "code": "moscow:sao:zapadnoe-degunino"
+            },
+            {
+              "name": "Левобережный",
+              "code": "moscow:sao:levoberezhnyy"
+            },
+            {
+              "name": "Савеловский",
+              "code": "moscow:sao:savelovskiy"
+            },
+            {
+              "name": "Сокол",
+              "code": "moscow:sao:sokol"
+            },
+            {
+              "name": "Тимирязевский",
+              "code": "moscow:sao:timiryazevskiy"
+            },
+            {
+              "name": "Хорошевский",
+              "code": "moscow:sao:horoshevskiy"
+            }
+          ]
+        },
+        {
+          "name": "СВАО",
+          "children": [
+            {
+              "name": "Алексеевский",
+              "code": "moscow:svao:alekseevskiy"
+            },
+            {
+              "name": "Бутырский",
+              "code": "moscow:svao:butyrskiy"
+            },
+            {
+              "name": "Марфино",
+              "code": "moscow:svao:marfino"
+            },
+            {
+              "name": "Марьина роща",
+              "code": "moscow:svao:marina-roscha"
+            },
+            {
+              "name": "Останкинский",
+              "code": "moscow:svao:ostankinskiy"
+            },
+            {
+              "name": "Отрадное",
+              "code": "moscow:svao:otradnoe"
+            },
+            {
+              "name": "Ростокино",
+              "code": "moscow:svao:rostokino"
+            },
+            {
+              "name": "Свиблово",
+              "code": "moscow:svao:sviblovo"
+            },
+            {
+              "name": "Северный",
+              "code": "moscow:svao:severnyy"
+            },
+            {
+              "name": "Ярославский",
+              "code": "moscow:svao:yaroslavskiy"
+            }
+          ]
+        },
+        {
+          "name": "ВАО",
+          "children": [
+            {
+              "name": "Богородское",
+              "code": "moscow:vao:bogorodskoe"
+            },
+            {
+              "name": "Гольяново",
+              "code": "moscow:vao:golyanovo"
+            },
+            {
+              "name": "Метрогородок",
+              "code": "moscow:vao:metrogorodok"
+            },
+            {
+              "name": "Новокосино",
+              "code": "moscow:vao:novokosino"
+            },
+            {
+              "name": "Перово",
+              "code": "moscow:vao:perovo"
+            },
+            {
+              "name": "Преображенское",
+              "code": "moscow:vao:preobrazhenskoe"
+            },
+            {
+              "name": "Соколиная гора",
+              "code": "moscow:vao:sokolinaya-gora"
+            },
+            {
+              "name": "Сокольники",
+              "code": "moscow:vao:sokolniki"
+            }
+          ]
+        },
+        {
+          "name": "ЮВАО",
+          "children": [
+            {
+              "name": "Лефортово",
+              "code": "moscow:yuvao:lefortovo"
+            },
+            {
+              "name": "Марьино",
+              "code": "moscow:yuvao:marino"
+            },
+            {
+              "name": "Нижегородский",
+              "code": "moscow:yuvao:nizhegorodskiy"
+            },
+            {
+              "name": "Печатники",
+              "code": "moscow:yuvao:pechatniki"
+            },
+            {
+              "name": "Рязанский",
+              "code": "moscow:yuvao:ryazanskiy"
+            },
+            {
+              "name": "Текстильщики",
+              "code": "moscow:yuvao:tekstilschiki"
+            },
+            {
+              "name": "Южнопортовый",
+              "code": "moscow:yuvao:yuzhnoportovyy"
+            }
+          ]
+        },
+        {
+          "name": "ЮАО",
+          "children": [
+            {
+              "name": "Восточное Бирюлёво",
+              "code": "moscow:yuao:vostochnoe-biryulevo"
+            },
+            {
+              "name": "Даниловский",
+              "code": "moscow:yuao:danilovskiy"
+            },
+            {
+              "name": "Донской",
+              "code": "moscow:yuao:donskoy"
+            },
+            {
+              "name": "Москворечье-Сабурово",
+              "code": "moscow:yuao:moskvoreche-saburovo"
+            },
+            {
+              "name": "Нагатино-Садовники",
+              "code": "moscow:yuao:nagatino-sadovniki"
+            },
+            {
+              "name": "Нагатинский затон",
+              "code": "moscow:yuao:nagatinskiy-zaton"
+            },
+            {
+              "name": "Нагорный",
+              "code": "moscow:yuao:nagornyy"
+            },
+            {
+              "name": "Царицыно",
+              "code": "moscow:yuao:caricyno"
+            },
+            {
+              "name": "Центральное Чертаново",
+              "code": "moscow:yuao:centralnoe-chertanovo"
+            },
+            {
+              "name": "Южное Чертаново",
+              "code": "moscow:yuao:yuzhnoe-chertanovo"
+            }
+          ]
+        },
+        {
+          "name": "ЮЗАО",
+          "children": [
+            {
+              "name": "Академический",
+              "code": "moscow:yuzao:akademicheskiy"
+            },
+            {
+              "name": "Гагаринский",
+              "code": "moscow:yuzao:gagarinskiy"
+            },
+            {
+              "name": "Коньково",
+              "code": "moscow:yuzao:konkovo"
+            },
+            {
+              "name": "Обручевский",
+              "code": "moscow:yuzao:obruchevskiy"
+            },
+            {
+              "name": "Черемушки",
+              "code": "moscow:yuzao:cheremushki"
+            },
+            {
+              "name": "Южное Бутово",
+              "code": "moscow:yuzao:yuzhnoe-butovo"
+            }
+          ]
+        },
+        {
+          "name": "ЗАО",
+          "children": [
+            {
+              "name": "Дорогомилово",
+              "code": "moscow:zao:dorogomilovo"
+            },
+            {
+              "name": "Крылатское",
+              "code": "moscow:zao:krylatskoe"
+            },
+            {
+              "name": "Кунцево",
+              "code": "moscow:zao:kuncevo"
+            },
+            {
+              "name": "Можайский",
+              "code": "moscow:zao:mozhayskiy"
+            },
+            {
+              "name": "Ново-Переделкино",
+              "code": "moscow:zao:novo-peredelkino"
+            },
+            {
+              "name": "Очаково-Матвеевское",
+              "code": "moscow:zao:ochakovo-matveevskoe"
+            },
+            {
+              "name": "Проспект Вернадского",
+              "code": "moscow:zao:prospekt-vernadskogo"
+            },
+            {
+              "name": "Раменки",
+              "code": "moscow:zao:ramenki"
+            },
+            {
+              "name": "Солнцево",
+              "code": "moscow:zao:solncevo"
+            },
+            {
+              "name": "Тропарево-Никулино",
+              "code": "moscow:zao:troparevo-nikulino"
+            },
+            {
+              "name": "Филевский парк",
+              "code": "moscow:zao:filevskiy-park"
+            },
+            {
+              "name": "Фили-Давыдково",
+              "code": "moscow:zao:fili-davydkovo"
+            }
+          ]
+        },
+        {
+          "name": "СЗАО",
+          "children": [
+            {
+              "name": "Куркино",
+              "code": "moscow:szao:kurkino"
+            },
+            {
+              "name": "Митино",
+              "code": "moscow:szao:mitino"
+            },
+            {
+              "name": "Покровское-Стрешнево",
+              "code": "moscow:szao:pokrovskoe-streshnevo"
+            },
+            {
+              "name": "Строгино",
+              "code": "moscow:szao:strogino"
+            },
+            {
+              "name": "Хорошево-Мневники",
+              "code": "moscow:szao:horoshevo-mnevniki"
+            },
+            {
+              "name": "Щукино",
+              "code": "moscow:szao:schukino"
+            },
+            {
+              "name": "Южное Тушино",
+              "code": "moscow:szao:yuzhnoe-tushino"
+            }
+          ]
+        },
+        {
+          "name": "ЗелАО",
+          "children": [
+            {
+              "name": "Крюково",
+              "code": "moscow:zelao:kryukovo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Московская область",
+      "children": [
+        {
+          "name": "Городские округа",
+          "children": [
+            {
+              "name": "ГО Балашиха, МО",
+              "code": "mo:go:go-balashiha-mo"
+            },
+            {
+              "name": "ГО Богородский, МО",
+              "code": "mo:go:go-bogorodskiy-mo"
+            },
+            {
+              "name": "ГО Долгопрудный, МО",
+              "code": "mo:go:go-dolgoprudnyy-mo"
+            },
+            {
+              "name": "ГО Домодедово, МО",
+              "code": "mo:go:go-domodedovo-mo"
+            },
+            {
+              "name": "ГО Жуковский, МО",
+              "code": "mo:go:go-zhukovskiy-mo"
+            },
+            {
+              "name": "ГО Королев, МО",
+              "code": "mo:go:go-korolev-mo"
+            },
+            {
+              "name": "ГО Котельники, МО",
+              "code": "mo:go:go-kotelniki-mo"
+            },
+            {
+              "name": "ГО Красногорск, МО",
+              "code": "mo:go:go-krasnogorsk-mo"
+            },
+            {
+              "name": "ГО Ленинский, МО",
+              "code": "mo:go:go-leninskiy-mo"
+            },
+            {
+              "name": "ГО Лыткарино, МО",
+              "code": "mo:go:go-lytkarino-mo"
+            },
+            {
+              "name": "ГО Люберцы, МО",
+              "code": "mo:go:go-lyubercy-mo"
+            },
+            {
+              "name": "ГО Мытищи, МО",
+              "code": "mo:go:go-mytischi-mo"
+            },
+            {
+              "name": "ГО Одинцовский, МО",
+              "code": "mo:go:go-odincovskiy-mo"
+            },
+            {
+              "name": "ГО Подольск, МО",
+              "code": "mo:go:go-podolsk-mo"
+            },
+            {
+              "name": "ГО Реутов, МО",
+              "code": "mo:go:go-reutov-mo"
+            },
+            {
+              "name": "ГО Сергиево-Посадский, МО",
+              "code": "mo:go:go-sergievo-posadskiy-mo"
+            },
+            {
+              "name": "ГО Серпухов, МО",
+              "code": "mo:go:go-serpuhov-mo"
+            },
+            {
+              "name": "ГО Солнечногорск, МО",
+              "code": "mo:go:go-solnechnogorsk-mo"
+            },
+            {
+              "name": "ГО Ступино, МО",
+              "code": "mo:go:go-stupino-mo"
+            },
+            {
+              "name": "ГО Химки, МО",
+              "code": "mo:go:go-himki-mo"
+            },
+            {
+              "name": "ГО Щелково, МО",
+              "code": "mo:go:go-schelkovo-mo"
+            }
+          ]
+        },
+        {
+          "name": "Муниципальные округа",
+          "children": [
+            {
+              "name": "Дмитровский муниципальный округ, МО",
+              "code": "mo:mun:dmitrovskiy-municipalnyy-okrug-mo"
+            },
+            {
+              "name": "Можайский муниципальный округ, МО",
+              "code": "mo:mun:mozhayskiy-municipalnyy-okrug-mo"
+            },
+            {
+              "name": "Муниципальный округ Истра, МО",
+              "code": "mo:mun:municipalnyy-okrug-istra-mo"
+            },
+            {
+              "name": "Муниципальный округ Луховицы, МО",
+              "code": "mo:mun:municipalnyy-okrug-luhovicy-mo"
+            },
+            {
+              "name": "Муниципальный округ Шаховская, МО",
+              "code": "mo:mun:municipalnyy-okrug-shahovskaya-mo"
+            },
+            {
+              "name": "Раменский муниципальный округ, МО",
+              "code": "mo:mun:ramenskiy-municipalnyy-okrug-mo"
+            },
+            {
+              "name": "Рузский муниципальный округ, МО",
+              "code": "mo:mun:ruzskiy-municipalnyy-okrug-mo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ленинградская область",
+      "children": [
+        {
+          "name": "Санкт-Петербург",
+          "children": [
+            {
+              "name": "Адмиралтейский р-н",
+              "code": "spb:admiralteyskiy-r-n"
+            },
+            {
+              "name": "Василеостровский р-н",
+              "code": "spb:vasileostrovskiy-r-n"
+            },
+            {
+              "name": "Выборгский р-н",
+              "code": "spb:vyborgskiy-r-n"
+            },
+            {
+              "name": "Калининский р-н",
+              "code": "spb:kalininskiy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "spb:kirovskiy-r-n"
+            },
+            {
+              "name": "Колпинский р-н",
+              "code": "spb:kolpinskiy-r-n"
+            },
+            {
+              "name": "Красногвардейский р-н",
+              "code": "spb:krasnogvardeyskiy-r-n"
+            },
+            {
+              "name": "Красносельский р-н",
+              "code": "spb:krasnoselskiy-r-n"
+            },
+            {
+              "name": "Кронштадтский р-н",
+              "code": "spb:kronshtadtskiy-r-n"
+            },
+            {
+              "name": "Курортный р-н",
+              "code": "spb:kurortnyy-r-n"
+            },
+            {
+              "name": "Московский р-н",
+              "code": "spb:moskovskiy-r-n"
+            },
+            {
+              "name": "Невский р-н",
+              "code": "spb:nevskiy-r-n"
+            },
+            {
+              "name": "Петроградский р-н",
+              "code": "spb:petrogradskiy-r-n"
+            },
+            {
+              "name": "Петродворцовый р-н",
+              "code": "spb:petrodvorcovyy-r-n"
+            },
+            {
+              "name": "Приморский р-н",
+              "code": "spb:primorskiy-r-n"
+            },
+            {
+              "name": "Пушкинский р-н",
+              "code": "spb:pushkinskiy-r-n"
+            },
+            {
+              "name": "Фрунзенский р-н",
+              "code": "spb:frunzenskiy-r-n"
+            },
+            {
+              "name": "Центральный р-н",
+              "code": "spb:centralnyy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Волосовский р-н, ЛО",
+          "code": "lo:volosovskiy-r-n-lo"
+        },
+        {
+          "name": "Волховский р-н, ЛО",
+          "code": "lo:volhovskiy-r-n-lo"
+        },
+        {
+          "name": "Всеволожский р-н, ЛО",
+          "code": "lo:vsevolozhskiy-r-n-lo"
+        },
+        {
+          "name": "Выборгский р-н, ЛО",
+          "code": "lo:vyborgskiy-r-n-lo"
+        },
+        {
+          "name": "Гатчинский р-н, ЛО",
+          "code": "lo:gatchinskiy-r-n-lo"
+        },
+        {
+          "name": "Кингисеппский р-н, ЛО",
+          "code": "lo:kingiseppskiy-r-n-lo"
+        },
+        {
+          "name": "Кировский р-н, ЛО",
+          "code": "lo:kirovskiy-r-n-lo"
+        },
+        {
+          "name": "Ломоносовский р-н, ЛО",
+          "code": "lo:lomonosovskiy-r-n-lo"
+        },
+        {
+          "name": "Приозерский р-н, ЛО",
+          "code": "lo:priozerskiy-r-n-lo"
+        },
+        {
+          "name": "Сосновоборский ГО, ЛО",
+          "code": "lo:sosnovoborskiy-go-lo"
+        },
+        {
+          "name": "Тосненский р-н, ЛО",
+          "code": "lo:tosnenskiy-r-n-lo"
+        }
+      ]
+    },
+    {
+      "name": "Краснодарский край, Сочи, Адыгея",
+      "children": [
+        {
+          "name": "Краснодар",
+          "children": [
+            {
+              "name": "Западный округ",
+              "code": "krd:zapadnyy-okrug"
+            },
+            {
+              "name": "Карасунский округ",
+              "code": "krd:karasunskiy-okrug"
+            },
+            {
+              "name": "Прикубанский округ",
+              "code": "krd:prikubanskiy-okrug"
+            },
+            {
+              "name": "Центральный округ",
+              "code": "krd:centralnyy-okrug"
+            },
+            {
+              "name": "станица Елизаветинская",
+              "code": "krd:stanica-elizavetinskaya"
+            }
+          ]
+        },
+        {
+          "name": "Краснодарский край",
+          "children": [
+            {
+              "name": "Сочи",
+              "code": "krd:sochi"
+            },
+            {
+              "name": "Анапа",
+              "code": "krd:anapa"
+            },
+            {
+              "name": "Апшеронск",
+              "code": "krd:apsheronsk"
+            },
+            {
+              "name": "Армавир",
+              "code": "krd:armavir"
+            },
+            {
+              "name": "Брюховецкий р-н",
+              "code": "krd:bryuhoveckiy-r-n"
+            },
+            {
+              "name": "Выселковский р-н",
+              "code": "krd:vyselkovskiy-r-n"
+            },
+            {
+              "name": "Геленджик",
+              "code": "krd:gelendzhik"
+            },
+            {
+              "name": "Горячий Ключ",
+              "code": "krd:goryachiy-klyuch"
+            },
+            {
+              "name": "Гулькевичи",
+              "code": "krd:gulkevichi"
+            },
+            {
+              "name": "Ейск",
+              "code": "krd:eysk"
+            },
+            {
+              "name": "Кавказский р-н",
+              "code": "krd:kavkazskiy-r-n"
+            },
+            {
+              "name": "Крымск",
+              "code": "krd:krymsk"
+            },
+            {
+              "name": "Лабинский р-н",
+              "code": "krd:labinskiy-r-n"
+            },
+            {
+              "name": "Новокубанск",
+              "code": "krd:novokubansk"
+            },
+            {
+              "name": "Новороссийск",
+              "code": "krd:novorossiysk"
+            },
+            {
+              "name": "Приморско-Ахтарск",
+              "code": "krd:primorsko-ahtarsk"
+            },
+            {
+              "name": "Северский р-н",
+              "code": "krd:severskiy-r-n"
+            },
+            {
+              "name": "Темрюк",
+              "code": "krd:temryuk"
+            },
+            {
+              "name": "Темрюкский р-н",
+              "code": "krd:temryukskiy-r-n"
+            },
+            {
+              "name": "Тихорецк",
+              "code": "krd:tihoreck"
+            },
+            {
+              "name": "Туапсинский р-н",
+              "code": "krd:tuapsinskiy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Республика Адыгея",
+          "children": [
+            {
+              "name": "Майкоп",
+              "code": "krd:maykop"
+            },
+            {
+              "name": "Республика Адыгея",
+              "code": "krd:respublika-adygeya"
+            }
+          ]
+        },
+        {
+          "name": "Ставропольский край",
+          "children": [
+            {
+              "name": "Железноводск",
+              "code": "krd:zheleznovodsk"
+            },
+            {
+              "name": "Кисловодск",
+              "code": "krd:kislovodsk"
+            },
+            {
+              "name": "Пятигорск",
+              "code": "krd:pyatigorsk"
+            },
+            {
+              "name": "Ставрополь",
+              "code": "krd:stavropol"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Ростовская область",
+      "children": [
+        {
+          "name": "Ростов-на-Дону",
+          "children": [
+            {
+              "name": "Ворошиловский р-н",
+              "code": "rnd:voroshilovskiy-r-n"
+            },
+            {
+              "name": "Железнодорожный р-н",
+              "code": "rnd:zheleznodorozhnyy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "rnd:kirovskiy-r-n"
+            },
+            {
+              "name": "Ленинский р-н",
+              "code": "rnd:leninskiy-r-n"
+            },
+            {
+              "name": "Октябрьский р-н",
+              "code": "rnd:oktyabrskiy-r-n"
+            },
+            {
+              "name": "Первомайский р-н",
+              "code": "rnd:pervomayskiy-r-n"
+            },
+            {
+              "name": "Пролетарский р-н",
+              "code": "rnd:proletarskiy-r-n"
+            },
+            {
+              "name": "Советский р-н",
+              "code": "rnd:sovetskiy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Аксайский р-н",
+          "code": "rnd:aksayskiy-r-n"
+        },
+        {
+          "name": "Азов",
+          "code": "rnd:azov"
+        },
+        {
+          "name": "Батайск",
+          "code": "rnd:bataysk"
+        },
+        {
+          "name": "Новочеркасск",
+          "code": "rnd:novocherkassk"
+        }
+      ]
+    },
+    {
+      "name": "Республика Крым",
+      "children": [
+        {
+          "name": "Симферополь",
+          "code": "crimea:simferopol"
+        },
+        {
+          "name": "Севастополь",
+          "code": "crimea:sevastopol"
+        },
+        {
+          "name": "Южный берег Крыма",
+          "children": [
+            {
+              "name": "Алупка",
+              "code": "crimea:alupka"
+            },
+            {
+              "name": "Алушта",
+              "code": "crimea:alushta"
+            },
+            {
+              "name": "Массандра",
+              "code": "crimea:massandra"
+            },
+            {
+              "name": "Ялта",
+              "code": "crimea:yalta"
+            }
+          ]
+        },
+        {
+          "name": "Восточный берег Крыма",
+          "children": [
+            {
+              "name": "Керчь",
+              "code": "crimea:kerch"
+            },
+            {
+              "name": "Судак",
+              "code": "crimea:sudak"
+            },
+            {
+              "name": "Феодосия",
+              "code": "crimea:feodosiya"
+            }
+          ]
+        },
+        {
+          "name": "Западный берег Крыма",
+          "children": [
+            {
+              "name": "Евпатория",
+              "code": "crimea:evpatoriya"
+            },
+            {
+              "name": "Саки",
+              "code": "crimea:saki"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Республика Татарстан",
+      "children": [
+        {
+          "name": "Казань",
+          "children": [
+            {
+              "name": "Авиастроительный р-н",
+              "code": "kzn:aviastroitelnyy-r-n"
+            },
+            {
+              "name": "Вахитовский р-н",
+              "code": "kzn:vahitovskiy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "kzn:kirovskiy-r-n"
+            },
+            {
+              "name": "Московский р-н",
+              "code": "kzn:moskovskiy-r-n"
+            },
+            {
+              "name": "Ново-Савиновский р-н",
+              "code": "kzn:novo-savinovskiy-r-n"
+            },
+            {
+              "name": "Приволжский р-н",
+              "code": "kzn:privolzhskiy-r-n"
+            },
+            {
+              "name": "Советский р-н",
+              "code": "kzn:sovetskiy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Верхнеуслонский р-н",
+          "code": "kzn:verhneuslonskiy-r-n"
+        },
+        {
+          "name": "Высокогорский р-н",
+          "code": "kzn:vysokogorskiy-r-n"
+        },
+        {
+          "name": "Зеленодольский р-н",
+          "code": "kzn:zelenodolskiy-r-n"
+        },
+        {
+          "name": "Лаишевский р-н",
+          "code": "kzn:laishevskiy-r-n"
+        },
+        {
+          "name": "Пестречинский р-н",
+          "code": "kzn:pestrechinskiy-r-n"
+        },
+        {
+          "name": "Закамье",
+          "children": [
+            {
+              "name": "Набережные Челны",
+              "code": "kzn:naberezhnye-chelny"
+            },
+            {
+              "name": "Нижнекамский р-н",
+              "code": "kzn:nizhnekamskiy-r-n"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Республика Башкортостан",
+      "children": [
+        {
+          "name": "Уфа",
+          "children": [
+            {
+              "name": "Дёмский р-н",
+              "code": "ufa:demskiy-r-n"
+            },
+            {
+              "name": "Калининский р-н",
+              "code": "ufa:kalininskiy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "ufa:kirovskiy-r-n"
+            },
+            {
+              "name": "Ленинский р-н",
+              "code": "ufa:leninskiy-r-n"
+            },
+            {
+              "name": "Октябрьский р-н",
+              "code": "ufa:oktyabrskiy-r-n"
+            },
+            {
+              "name": "Орджоникидзевский р-н",
+              "code": "ufa:ordzhonikidzevskiy-r-n"
+            },
+            {
+              "name": "Советский р-н",
+              "code": "ufa:sovetskiy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Уфимский р-н",
+          "code": "ufa:ufimskiy-r-n"
+        },
+        {
+          "name": "Благовещенский р-н",
+          "code": "ufa:blagoveschenskiy-r-n"
+        },
+        {
+          "name": "Стерлитамак",
+          "code": "ufa:sterlitamak"
+        },
+        {
+          "name": "г. Октябрьский",
+          "code": "ufa:g-oktyabrskiy"
+        },
+        {
+          "name": "Туймазинский р-н",
+          "code": "ufa:tuymazinskiy-r-n"
+        },
+        {
+          "name": "Нефтекамск",
+          "code": "ufa:neftekamsk"
+        },
+        {
+          "name": "Чишминский р-н",
+          "code": "ufa:chishminskiy-r-n"
+        }
+      ]
+    },
+    {
+      "name": "Свердловская область",
+      "children": [
+        {
+          "name": "Екатеринбург",
+          "children": [
+            {
+              "name": "Академический р-н",
+              "code": "ekb:akademicheskiy-r-n"
+            },
+            {
+              "name": "Верх-Исетский р-н",
+              "code": "ekb:verh-isetskiy-r-n"
+            },
+            {
+              "name": "Железнодорожный р-н",
+              "code": "ekb:zheleznodorozhnyy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "ekb:kirovskiy-r-n"
+            },
+            {
+              "name": "Ленинский р-н",
+              "code": "ekb:leninskiy-r-n"
+            },
+            {
+              "name": "Октябрьский р-н",
+              "code": "ekb:oktyabrskiy-r-n"
+            },
+            {
+              "name": "Орджоникидзевский р-н",
+              "code": "ekb:ordzhonikidzevskiy-r-n"
+            },
+            {
+              "name": "Чкаловский р-н",
+              "code": "ekb:chkalovskiy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Верхняя Пышма",
+          "code": "ekb:verhnyaya-pyshma"
+        },
+        {
+          "name": "Березовский",
+          "code": "ekb:berezovskiy"
+        },
+        {
+          "name": "Заречный",
+          "code": "ekb:zarechnyy"
+        },
+        {
+          "name": "Дегтярск",
+          "code": "ekb:degtyarsk"
+        },
+        {
+          "name": "Первоуральск",
+          "code": "ekb:pervouralsk"
+        },
+        {
+          "name": "Нижний Тагил",
+          "code": "ekb:nizhniy-tagil"
+        },
+        {
+          "name": "Новоуральск",
+          "code": "ekb:novouralsk"
+        },
+        {
+          "name": "Полевской",
+          "code": "ekb:polevskoy"
+        },
+        {
+          "name": "Среднеуральск",
+          "code": "ekb:sredneuralsk"
+        },
+        {
+          "name": "Сысертский округ",
+          "code": "ekb:sysertskiy-okrug"
+        },
+        {
+          "name": "п. Санаторный",
+          "code": "ekb:p-sanatornyy"
+        },
+        {
+          "name": "Челябинская область",
+          "code": "ekb:chelyabinskaya-oblast"
+        }
+      ]
+    },
+    {
+      "name": "Новосибирская область",
+      "children": [
+        {
+          "name": "Новосибирск",
+          "children": [
+            {
+              "name": "Дзержинский р-н",
+              "code": "nsk:dzerzhinskiy-r-n"
+            },
+            {
+              "name": "Железнодорожный р-н",
+              "code": "nsk:zheleznodorozhnyy-r-n"
+            },
+            {
+              "name": "Заельцовский р-н",
+              "code": "nsk:zaelcovskiy-r-n"
+            },
+            {
+              "name": "Калининский р-н",
+              "code": "nsk:kalininskiy-r-n"
+            },
+            {
+              "name": "Кировский р-н",
+              "code": "nsk:kirovskiy-r-n"
+            },
+            {
+              "name": "Ленинский р-н",
+              "code": "nsk:leninskiy-r-n"
+            },
+            {
+              "name": "Октябрьский р-н",
+              "code": "nsk:oktyabrskiy-r-n"
+            },
+            {
+              "name": "Первомайский р-н",
+              "code": "nsk:pervomayskiy-r-n"
+            },
+            {
+              "name": "Советский р-н",
+              "code": "nsk:sovetskiy-r-n"
+            },
+            {
+              "name": "Центральный р-н",
+              "code": "nsk:centralnyy-r-n"
+            }
+          ]
+        },
+        {
+          "name": "Бердск",
+          "code": "nsk:berdsk"
+        },
+        {
+          "name": "Обь",
+          "code": "nsk:ob"
+        },
+        {
+          "name": "Краснообск",
+          "code": "nsk:krasnoobsk"
+        },
+        {
+          "name": "Кольцово",
+          "code": "nsk:kolcovo"
+        },
+        {
+          "name": "Барышево",
+          "code": "nsk:baryshevo"
+        },
+        {
+          "name": "Новосибирский р-н",
+          "code": "nsk:novosibirskiy-r-n"
+        },
+        {
+          "name": "Мошковский р-н",
+          "code": "nsk:moshkovskiy-r-n"
+        },
+        {
+          "name": "Куйбышевский р-н",
+          "code": "nsk:kuybyshevskiy-r-n"
+        }
+      ]
+    },
+    {
+      "name": "Алтайский край",
+      "children": [
+        {
+          "name": "Барнаул",
+          "code": "nsk:barnaul"
+        },
+        {
+          "name": "Белокуриха",
+          "code": "nsk:belokuriha"
+        }
+      ]
+    },
+    {
+      "name": "Республика Алтай",
+      "children": [
+        {
+          "name": "Горно-Алтайск",
+          "code": "nsk:gorno-altaysk"
+        }
+      ]
+    },
+    {
+      "name": "Кемеровская область",
+      "children": [
+        {
+          "name": "Кемерово",
+          "code": "nsk:kemerovo"
+        },
+        {
+          "name": "Новокузнецк",
+          "code": "nsk:novokuzneck"
+        },
+        {
+          "name": "пгт Шерегеш",
+          "code": "nsk:pgt-sheregesh"
+        }
+      ]
+    },
+    {
+      "name": "Томская область",
+      "children": [
+        {
+          "name": "Томск",
+          "code": "nsk:tomsk"
+        }
+      ]
+    }
+  ]
+}
